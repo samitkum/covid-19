@@ -1,9 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Card, Grid, CardContent, Typography } from "@material-ui/core";
-<<<<<<< HEAD
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
-=======
->>>>>>> 39d00aea93b240f06de41e9d19773b3b4090366e
 import CovidContext from "../../context/covid/covid.context";
 import Spinner from "../Spinner/Spinner";
 import Countup from "react-countup";
@@ -37,25 +34,15 @@ const Cards = ({ data }) => {
       <Grid
         item
         xs={12}
-<<<<<<< HEAD
         sm={2}
         component={Card}
         style={{
           backgroundColor: "#ffb3b3",
           borderBottom: "4px solid #ff3333",
-=======
-        md={3}
-        sm={3}
-        component={Card}
-        style={{
-          backgroundColor: "#cceeff",
-          borderBottom: "4px solid #4dc3ff",
->>>>>>> 39d00aea93b240f06de41e9d19773b3b4090366e
         }}
         className="card"
       >
         <CardContent>
-<<<<<<< HEAD
           <Typography
             color="textSecondary"
             style={{ color: "#e60000" }}
@@ -127,20 +114,6 @@ const Cards = ({ data }) => {
             />
           </Typography>
           <Typography color="primary" style={{ color: "#006699" }} gutterBottom>
-=======
-          <Typography color="textSecondary" gutterBottom>
-            Confirmed
-          </Typography>
-          <Typography color="primary" variant="h4" gutterBottom>
-            <Countup
-              start={0}
-              end={Number(state.confirmed)}
-              separator=","
-              duration={1.5}
-            />
-          </Typography>
-          <Typography color="primary" gutterBottom>
->>>>>>> 39d00aea93b240f06de41e9d19773b3b4090366e
             {moment(modifiedDate).format("MMM Do YY")}
           </Typography>
         </CardContent>
@@ -148,12 +121,7 @@ const Cards = ({ data }) => {
       <Grid
         item
         xs={12}
-<<<<<<< HEAD
         sm={2}
-=======
-        md={3}
-        sm={3}
->>>>>>> 39d00aea93b240f06de41e9d19773b3b4090366e
         component={Card}
         style={{
           backgroundColor: "#bbff99",
@@ -167,7 +135,6 @@ const Cards = ({ data }) => {
             style={{ color: "#008000" }}
             gutterBottom
           >
-<<<<<<< HEAD
             Recovered
           </Typography>
           <Typography variant="h4" gutterBottom className="deltaValTypo">
@@ -190,14 +157,6 @@ const Cards = ({ data }) => {
             <Countup
               start={0}
               end={Number(state.deltarecovered)}
-=======
-            Active
-          </Typography>
-          <Typography color="primary" variant="h4" gutterBottom>
-            <Countup
-              start={0}
-              end={Number(state.active)}
->>>>>>> 39d00aea93b240f06de41e9d19773b3b4090366e
               separator=","
               duration={1.5}
               style={{ color: "#008000" }}
@@ -211,51 +170,33 @@ const Cards = ({ data }) => {
       <Grid
         item
         xs={12}
-<<<<<<< HEAD
         sm={2}
         component={Card}
         style={{
           backgroundColor: "#d6d6c2",
           borderBottom: "4px solid #5c5c3d",
-=======
-        md={3}
-        sm={3}
-        component={Card}
-        style={{
-          backgroundColor: "#ffb3b3",
-          borderBottom: "4px solid #ff3333",
->>>>>>> 39d00aea93b240f06de41e9d19773b3b4090366e
         }}
         className="card"
       >
         <CardContent>
           <Typography
             color="textSecondary"
-<<<<<<< HEAD
             style={{ color: "#5c5c3d" }}
-=======
-            style={{ color: "#e60000" }}
->>>>>>> 39d00aea93b240f06de41e9d19773b3b4090366e
             gutterBottom
           >
             Deaths
           </Typography>
-<<<<<<< HEAD
           <Typography
             color="primary"
             variant="h4"
             gutterBottom
             className="deltaValTypo"
           >
-=======
-          <Typography color="primary" variant="h4" gutterBottom>
->>>>>>> 39d00aea93b240f06de41e9d19773b3b4090366e
             <Countup
               start={0}
               end={Number(state.deaths)}
               separator=","
               duration={1.5}
-<<<<<<< HEAD
               style={{ color: "#5c5c3d" }}
             />
           </Typography>
@@ -276,12 +217,6 @@ const Cards = ({ data }) => {
             />
           </Typography>
           <Typography color="primary" style={{ color: "#5c5c3d" }} gutterBottom>
-=======
-              style={{ color: "#e60000" }}
-            />
-          </Typography>
-          <Typography color="primary" style={{ color: "#e60000" }} gutterBottom>
->>>>>>> 39d00aea93b240f06de41e9d19773b3b4090366e
             {moment(modifiedDate).format("MMM Do YY")}
           </Typography>
         </CardContent>
