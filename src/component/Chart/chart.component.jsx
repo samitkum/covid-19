@@ -21,6 +21,7 @@ const Chart = () => {
         label: "Deaths",
         fill: true,
       },
+<<<<<<< HEAD
       {
         data: dates.map(({ totalrecovered }) => totalrecovered),
         borderColor: "#008000",
@@ -37,6 +38,18 @@ const Chart = () => {
         color: ["#ffb3b3", "#99ddff", "#bbff99", "#d6d6c2"],
         fill: true,
         backgroundColor: ["#ffb3b3", "#99ddff", "#bbff99", "#d6d6c2"],
+=======
+    ],
+  };
+  const BarData = {
+    labels: ["confirmed", "active", "deaths"],
+    datasets: [
+      {
+        data: [state.confirmed, state.active, state.deaths],
+        color: ["#cceeff", "#008000", "#e60000"],
+        fill: true,
+        backgroundColor: ["#cceeff", "#008000", "#e60000"],
+>>>>>>> 39d00aea93b240f06de41e9d19773b3b4090366e
         label: "People",
       },
     ],

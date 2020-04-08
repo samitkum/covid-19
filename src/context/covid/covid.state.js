@@ -18,7 +18,10 @@ const CovidState = (props) => {
   const fetchData = async () => {
     try {
       const resp = await axios.get("https://api.covid19india.org/data.json");
+<<<<<<< HEAD
       console.log(resp);
+=======
+>>>>>>> 39d00aea93b240f06de41e9d19773b3b4090366e
       dispatch({
         type: FETCH_STATES,
         payload: resp.data,
