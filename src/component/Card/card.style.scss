@@ -1,9 +1,24 @@
 .card {
   margin: 0 2% !important;
 }
+.deltaValTypo {
+  display: inline;
+}
+
+@media only screen and (max-width: 1185px) {
+  .card {
+    margin: 2% 0 !important;
+  }
+  .deltaValTypo {
+    display: block;
+  }
+}
 
 @media only screen and (max-width: 770px) {
   .card {
     margin: 2% 0 !important;
+  }
+  .deltaValTypo {
+    display: inline;
   }
 }

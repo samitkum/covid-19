@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Card, Grid, CardContent, Typography } from "@material-ui/core";
+import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import CovidContext from "../../context/covid/covid.context";
 import Spinner from "../Spinner/Spinner";
 import Countup from "react-countup";
@@ -33,71 +34,7 @@ const Cards = ({ data }) => {
       <Grid
         item
         xs={12}
-        md={3}
-        sm={3}
-        component={Card}
-        style={{
-          backgroundColor: "#cceeff",
-          borderBottom: "4px solid #4dc3ff",
-        }}
-        className="card"
-      >
-        <CardContent>
-          <Typography color="textSecondary" gutterBottom>
-            Confirmed
-          </Typography>
-          <Typography color="primary" variant="h4" gutterBottom>
-            <Countup
-              start={0}
-              end={Number(state.confirmed)}
-              separator=","
-              duration={1.5}
-            />
-          </Typography>
-          <Typography color="primary" gutterBottom>
-            {moment(modifiedDate).format("MMM Do YY")}
-          </Typography>
-        </CardContent>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        md={3}
-        sm={3}
-        component={Card}
-        style={{
-          backgroundColor: "#bbff99",
-          borderBottom: "4px solid #77ff33",
-        }}
-        className="card"
-      >
-        <CardContent>
-          <Typography
-            color="textSecondary"
-            style={{ color: "#008000" }}
-            gutterBottom
-          >
-            Active
-          </Typography>
-          <Typography color="primary" variant="h4" gutterBottom>
-            <Countup
-              start={0}
-              end={Number(state.active)}
-              separator=","
-              duration={1.5}
-              style={{ color: "#008000" }}
-            />
-          </Typography>
-          <Typography color="primary" style={{ color: "#008000" }} gutterBottom>
-            {moment(modifiedDate).format("MMM Do YY")}
-          </Typography>
-        </CardContent>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        md={3}
-        sm={3}
+        sm={2}
         component={Card}
         style={{
           backgroundColor: "#ffb3b3",
@@ -111,18 +48,175 @@ const Cards = ({ data }) => {
             style={{ color: "#e60000" }}
             gutterBottom
           >
-            Deaths
+            Confirmed
           </Typography>
-          <Typography color="primary" variant="h4" gutterBottom>
+          <Typography
+            color="primary"
+            variant="h4"
+            gutterBottom
+            className="deltaValTypo"
+          >
             <Countup
               start={0}
-              end={Number(state.deaths)}
+              end={Number(state.confirmed)}
+              separator=","
+              duration={1.5}
+              style={{ color: "#e60000" }}
+            />
+          </Typography>
+          <Typography
+            variant="h6"
+            gutterBottom
+            style={{ display: "inline", marginLeft: "5%" }}
+          >
+            <ArrowUpwardIcon
+              style={{ color: "e60000", position: "relative", top: "4px" }}
+            />
+            <Countup
+              start={0}
+              end={Number(state.deltaconfirmed)}
               separator=","
               duration={1.5}
               style={{ color: "#e60000" }}
             />
           </Typography>
           <Typography color="primary" style={{ color: "#e60000" }} gutterBottom>
+            {moment(modifiedDate).format("MMM Do YY")}
+          </Typography>
+        </CardContent>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        sm={2}
+        component={Card}
+        style={{
+          backgroundColor: "#99ddff",
+          borderBottom: "4px solid #006699",
+        }}
+        className="card"
+      >
+        <CardContent>
+          <Typography
+            color="textSecondary"
+            style={{ color: "#006699" }}
+            gutterBottom
+          >
+            Active
+          </Typography>
+          <Typography color="primary" variant="h4" gutterBottom>
+            <Countup
+              start={0}
+              end={Number(state.active)}
+              separator=","
+              duration={1.5}
+              style={{ color: "#006699" }}
+            />
+          </Typography>
+          <Typography color="primary" style={{ color: "#006699" }} gutterBottom>
+            {moment(modifiedDate).format("MMM Do YY")}
+          </Typography>
+        </CardContent>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        sm={2}
+        component={Card}
+        style={{
+          backgroundColor: "#bbff99",
+          borderBottom: "4px solid #77ff33",
+        }}
+        className="card"
+      >
+        <CardContent>
+          <Typography
+            color="textSecondary"
+            style={{ color: "#008000" }}
+            gutterBottom
+          >
+            Recovered
+          </Typography>
+          <Typography variant="h4" gutterBottom className="deltaValTypo">
+            <Countup
+              start={0}
+              end={Number(state.recovered)}
+              separator=","
+              duration={1.5}
+              style={{ color: "#008000" }}
+            />
+          </Typography>
+          <Typography
+            variant="h6"
+            gutterBottom
+            style={{ display: "inline", marginLeft: "5%" }}
+          >
+            <ArrowUpwardIcon
+              style={{ color: "008000", position: "relative", top: "4px" }}
+            />
+            <Countup
+              start={0}
+              end={Number(state.deltarecovered)}
+              separator=","
+              duration={1.5}
+              style={{ color: "#008000" }}
+            />
+          </Typography>
+          <Typography color="primary" style={{ color: "#008000" }} gutterBottom>
+            {moment(modifiedDate).format("MMM Do YY")}
+          </Typography>
+        </CardContent>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        sm={2}
+        component={Card}
+        style={{
+          backgroundColor: "#d6d6c2",
+          borderBottom: "4px solid #5c5c3d",
+        }}
+        className="card"
+      >
+        <CardContent>
+          <Typography
+            color="textSecondary"
+            style={{ color: "#5c5c3d" }}
+            gutterBottom
+          >
+            Deaths
+          </Typography>
+          <Typography
+            color="primary"
+            variant="h4"
+            gutterBottom
+            className="deltaValTypo"
+          >
+            <Countup
+              start={0}
+              end={Number(state.deaths)}
+              separator=","
+              duration={1.5}
+              style={{ color: "#5c5c3d" }}
+            />
+          </Typography>
+          <Typography
+            variant="h6"
+            gutterBottom
+            style={{ display: "inline", marginLeft: "5%" }}
+          >
+            <ArrowUpwardIcon
+              style={{ color: "#5c5c3d", position: "relative", top: "4px" }}
+            />
+            <Countup
+              start={0}
+              end={Number(state.deltadeaths)}
+              separator=","
+              duration={1.5}
+              style={{ color: "#5c5c3d" }}
+            />
+          </Typography>
+          <Typography color="primary" style={{ color: "#5c5c3d" }} gutterBottom>
             {moment(modifiedDate).format("MMM Do YY")}
           </Typography>
         </CardContent>
