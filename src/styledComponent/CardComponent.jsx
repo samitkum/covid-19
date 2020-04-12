@@ -49,7 +49,7 @@ const CardComponent = ({
           gutterBottom
           style={{ display: "inline", marginLeft: "5%" }}
         >
-          {deltaValue ? (
+          {deltaValue > 0 ? (
             <>
               <ArrowUpwardIcon
                 style={{ color: color, position: "relative", top: "4px" }}
